@@ -29,7 +29,7 @@ class Solution:
                 return False
             for neighbor in graph[top]:
                 copy_seen, copy_stack = seen.copy(), stack.copy()
-                copy_seen.add(neighbor); copy_stack.add(neighbor)
+                copy_seen.add(neighbor); copy_stack.append(neighbor)
                 ret = dfs(copy_stack, copy_seen)
                 del copy_seen, copy_stack
                 if ret == True:
@@ -39,6 +39,8 @@ class Solution:
             
             # at this point the dfs suceeded so true
             return True
+        
+
         
 
 
