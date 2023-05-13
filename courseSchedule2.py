@@ -36,6 +36,10 @@ class Solution:
                     rets[top] = True
                 else:
                     return False
+            
+            # at this point the dfs suceeded so true
+            return True
+        
 
 
 
