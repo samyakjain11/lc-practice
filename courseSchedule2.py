@@ -47,6 +47,13 @@ class Solution:
                 return []
             
         # now we know there are no cycles so we can proceed to implement top sort
+
+    def topsort(graph):
+        # Identify a node with no incoming edges.
+        # Add that node to the ordering.
+        # Remove it from the graph.
+        # Repeat.
+        cur = []
         
         
 
