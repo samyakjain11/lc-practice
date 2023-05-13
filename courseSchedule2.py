@@ -41,6 +41,13 @@ class Solution:
             return True
         
 
+        for starting_node in source_nodes:
+            res = dfs([starting_node], set())
+            if res == False:
+                return []
+            
+        # now we know there are no cycles so we can proceed to implement top sort
+        
         
 
 
