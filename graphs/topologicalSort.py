@@ -41,7 +41,7 @@ def topsort(graph):
             cyclic = False
             cur.append(node)
     if cyclic:
-        print(graph)
+        # print(graph)
         return False
     
     for node in cur:
@@ -60,10 +60,14 @@ def topsort(graph):
         return cur + ret 
 
 
-edges = [[1,0],[2,0],[3,1],[3,2]]
-graph = parse(edges)
-# topsort(graph)
-print(topsort(graph))
+
+def combine_solution(edges):
+    graph = parse(edges)
+    ret = topsort(graph)
+    return ret if ret != False else []
+
+edges = [[1,0],[2,0],[3,1],[3,2], [4,3]]
+print(combine_solution(edges))
 # graph = {}
 # print(len(graph))
 # graph[1] = 0
