@@ -31,8 +31,20 @@ def countSubIslands(grid1: List[List[int]], grid2: List[List[int]]) -> int:
                 grid2_islands.append(new_island)
                 explored.update(new_island)
             
-    return len(grid2_islands)
+    # return len(grid2_islands)
+    # at this point we have all of our islands that occur in grid2 stored inside grid2 islands and 
+    # we just need to ensure that these every cell in an island is also a 1 on grid 1
+
+    for island in grid2_islands:
+        matched = True
+        for (x,y) in island:
+            if grid1[x][y] == 0:
+                matched = False
+                break
+        num_subislands += 1 if matched else 0
+
+    return num_subislands
 
 grid1 = [[1,1,1,0,0],[0,1,1,1,1],[0,0,0,0,0],[1,0,0,0,0],[1,1,0,1,1]]
 grid2 = [[1,1,1,0,0],[0,0,1,1,1],[0,1,0,0,0],[1,0,1,1,0],[0,1,0,1,0]]
-countSubIslands(grid1, grid2)
+print(countSubIslands(grid1, grid2))
