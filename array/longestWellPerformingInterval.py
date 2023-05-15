@@ -6,4 +6,10 @@ from typing import *
 
 class Solution:
     def longestWPI(self, hours: List[int]) -> int:
+        # definitely some form of sliding interval
+        # maybe DP??
+        correlation = [-1 if hour <= 8 else 1 for hour in hours]
+        # now we must find longest interval whose sum is >= 1
+        # naive solution is n*n-1 for all combinations
+        
         return 0
