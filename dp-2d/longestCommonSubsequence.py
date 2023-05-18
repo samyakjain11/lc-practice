@@ -18,7 +18,7 @@ def longestCommonSubsequence(text1: str, text2: str) -> int:
     
     return memoized[0][0]
 
-# text1 = "abcde"
-# text2 = "ace"
+text1 = "abcde"
+text2 = "ace"
 
-# print(longestCommonSubsequence(text1, text2))
+print(longestCommonSubsequence(text1, text2))
