@@ -7,7 +7,7 @@ def longestCommonSubsequence(text1: str, text2: str) -> int:
     #     else:
     #         return 0
     text1_length, text2_length = len(text1), len(text2)
-    memoized = [[0 for _ in range(text1_length)] for _ in range(text2_length)]
+    memoized = [[0 for _ in range(text2_length + 1)] for _ in range(text1_length + 1)]
 
     for text1_index in reversed(range(text1_length)):
         for text2_index in reversed(range(text2_length)):
