@@ -15,7 +15,7 @@ class Solution:
                 buy = subproblem(index + 1, not buying) - prices[index]
                 cache[(index, buying)] = max(buy, hold)
             else:
-                sell = subproblem(index + 2, not buying)
+                sell = subproblem(index + 2, not buying) + prices[index]
                 cache[(index, buying)] = max(sell, hold)
             return cache[(index, buying)]
 
