@@ -1,3 +1,5 @@
+from typing import *
+
 def totalFruit(self, fruits: List[int]) -> int:
     seen = set()
     last_index = {}
