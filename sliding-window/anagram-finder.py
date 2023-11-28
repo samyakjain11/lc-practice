@@ -1,3 +1,5 @@
+from typing import List
+
 def findAnagrams(self, s: str, p: str) -> List[int]:
         if len(s) < len(p): return []
         
