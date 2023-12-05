@@ -2,11 +2,11 @@
 
 open Common;;
 
-let rec lookup_handler list_to_search key_to_find = 
+let rec listSearch list_to_search key_to_find = 
   match list_to_search with 
   | [] -> None 
   | (Some current_key, value)::tail -> 
-      if key_to_find = current_key then Some value else lookup_handler tail key_to_find  
+      if key_to_find = current_key then Some value else listSearch tail key_to_find  
   | (None, default_value)::tail -> Some default_value 
 
 
@@ -16,7 +16,7 @@ let rec handle_exn_cont_var env b a =
   | Some (k', env') -> app_exn_handler_help env' k' a
 
 and handle_update_exn_cont env l k' a =
-  match lookup_handler l a with
+  match listSearch l a with
   | None -> app_exn_handler_help env k' a 
   | Some v -> Intermediate (env, v)
 
