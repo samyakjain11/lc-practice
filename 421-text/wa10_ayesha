@@ -1,0 +1,22 @@
+(%u. (% x. x (% y. x y)) u ((% u. u)(%w. w))) (% z. (% v. z v y))
+-B->	(% x. x (% y. x y)) (% z. (% v. z v y)) ((% u. u)(%w. w))
+<!-- -B->	(% y. (% z. (% v. z v y)) y) ((% u. u)(%w. w)) WRONG DOESNT COMPLETE REPLCAEMENT -->
+-B-> ((% x. x (% y. x y)) (% z. (% v. z v y))) (% w. w)
+=a=  ((% x. x (% a. x a)) (% z. % v. z v y)) (% w. w)
+-B-> (% z. % v. z v y) %a. (% z. % v. z v y) (% w. w)
+-B-> (% z. % v. z v y) (% a. (% z. % v. z v y) a) % w. w
+<!-- =a=	((% z. % v. z v y) (% y. (% z. % v. z v y) y)) (% w. w) -->
+
+
+
+<!-- FRESH COPY -->
+<!-- start -->
+(%u. (% x. x (% y. x y)) u ((% u. u)(%w. w))) (% z. (% v. z v y))
+
+-B-> (% x. x (% y. x y)) (% z. (% v. z v y)) ((% u. u)(%w. w))
+-B-> ((% x. x (% y. x y)) (% z. % v. z v y)) (% w. w)
+=a= ((% x. x (% a. x a)) (% z. % v. z v y)) (% w. w)
+-B-> (% z. % v. z v y) (% a. (% z. % v. z v y) a) (% w. w)
+-B-> (% z. % v. z v y) (% a. (% v. a v y)) (% w. w) (Im a fucking genius)
+-B-> (% v. (% a. % v. a v y) v y) (% w. w)
+-B-> (% v. (% w. w) v y) y

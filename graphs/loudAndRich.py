@@ -28,12 +28,12 @@ def loudAndRich(richer: List[List[int]], quiet: List[int]) -> List[int]:
         moreRich = gatherAllRicher(i)
         moreRich.append(i)
         print(moreRich)
-        quietList = [(quiet[j-1], j) for j in moreRich]
+        quietList = [(quiet[j], j) for j in moreRich]
         quietList.sort(reverse=True)
         answer.append(quietList[0][1])
     return answer
 
 
-richer = [[1,0],[2,1],[3,1],[3,7],[4,3],[5,3],[6,3]]
-quiet = [3,2,5,4,6,1,7,0]
+richer = [[0,1]]
+quiet = [1,0,2]
 loudAndRich(richer, quiet)

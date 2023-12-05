@@ -1,0 +1,32 @@
+(% x. x (% y. x y)) (% z. (% v. (% w. (z w) (w v) y))) ((% u. u u)(%w. w))
+-B-> (% x. x (% y. x y)) (% z. % v. % w. z w (w v) y) ((% w. w) (% w. w))
+-B-> (% x. x (% y. x y)) (% z. % v. % w. z w (w v) y) % w. w
+=a= (% x. x (% z. x z)) (% z. (% v. (% w. (z w) (w v) y))) ((%w. w))
+-B->  (% z. % v. % w. z w (w v) y) (% z. (% z. % v. % w. z w (w v) y) z) % w. w
+
+
+
+*/ correct answers
+(% x. x (% y. x y)) (% z. (% v. (% w. (z w) (w v) y))) ((% u. u u)(%w. w))
+
+-B-> (% x. x (% y. x y)) (% z. (% v. (% w. (z w) (w v) y))) ((%w. w)(%w. w))
+
+-B-> (% x. x (% y. x y)) (% z. (% v. (% w. (z w) (w v) y))) ((%w. w))
+
+=a= (% x. x (% a. x a)) (% z. (% v. (% w. (z w) (w v) y))) ((%w. w))
+
+-B-> (% z. (% v. (% w. (z w) (w v) y))) (% a. (% z. (% v. (% w. (z w) (w v) y))) a) ((%w. w))
+
+-B-> (% z. (% v. (% w. (z w) (w v) y))) (% a. ((% v. (% w. (a w) (w v) y)))) ((%w. w))
+
+-B-> (% v. (% w. (% a. % v. % w. a w (w v) y) w (w v) y)) (%w. w)
+
+-B-> % w. (% a. % v. % w. a w (w v) y) w (w (% w. w)) y
+
+=a= (%w. ((((%a. (%v. (%b. (((a b)(b v)) y)))) w) (w (%x1. x1))) y))
+
+-B-> % w. (%v. %b. w b (b v) y) (w (% x1. x1)) y
+
+-B-> (%w.((%b.(((w b)(b(w(%x1. x1))))y))y))
+
+-B-> (%w. (( (w y) (y (w (%x1. x1))))y))
